@@ -1,0 +1,87 @@
+/* Reference point, not a fifth variant: the same window in plain C, Raven
+ * linked statically, no game logic. Its size is "Raven + C runtime" - what
+ * every other variant adds on top is the cost of its language stack. */
+#include <Raven.h>
+#include <string.h>
+
+static const char XML[] =
+    "<Window Title=\"Simon - C baseline\" Width=\"540\" Height=\"480\" Theme=\"RavenGlassDark\">\n"
+    "    <!-- glass look: round glossy pads (a capsule of glass is round when it is square),\n"
+    "         a two-layer highlight on top that lets the clicks through -->\n"
+    "    <VBox Spacing=\"14\" Slot.Padding=\"18\">\n"
+    "        <HBox Spacing=\"12\">\n"
+    "            <Label Name=\"status\" Text=\"Press Start\" TextSize=\"20\" Slot.Fill=\"1\" Slot.VAlign=\"Center\"/>\n"
+    "            <Button Text=\"Start\" Style=\"Primary\" OnClicked=\"start\" Width=\"110\" Height=\"38\"/>\n"
+    "        </HBox>\n"
+    "        <UniformGrid Columns=\"3\" Spacing=\"10\" Slot.Fill=\"1\">\n"
+    "            <Overlay Width=\"146\" Height=\"146\" Slot.HAlign=\"Center\" Slot.VAlign=\"Center\">\n"
+    "                <Button Name=\"pad0\" Text=\"\" OnClicked=\"pad0\"/>\n"
+    "                <VBox HitTestable=\"false\" Slot.HAlign=\"Center\" Slot.VAlign=\"Top\">\n"
+    "                    <Spacer Height=\"7\"/>\n"
+    "                    <Overlay>\n"
+    "                        <Border Material=\"Solid\" Width=\"100\" Height=\"52\" CornerRadius=\"26\" Background=\"#FFFFFF10\"/>\n"
+    "                        <VBox Slot.HAlign=\"Center\"><Spacer Height=\"4\"/><Border Material=\"Solid\" Width=\"74\" Height=\"28\" CornerRadius=\"14\" Background=\"#FFFFFF22\"/></VBox>\n"
+    "                    </Overlay>\n"
+    "                </VBox>\n"
+    "            </Overlay>\n"
+    "            <Overlay Width=\"146\" Height=\"146\" Slot.HAlign=\"Center\" Slot.VAlign=\"Center\">\n"
+    "                <Button Name=\"pad1\" Text=\"\" OnClicked=\"pad1\"/>\n"
+    "                <VBox HitTestable=\"false\" Slot.HAlign=\"Center\" Slot.VAlign=\"Top\">\n"
+    "                    <Spacer Height=\"7\"/>\n"
+    "                    <Overlay>\n"
+    "                        <Border Material=\"Solid\" Width=\"100\" Height=\"52\" CornerRadius=\"26\" Background=\"#FFFFFF10\"/>\n"
+    "                        <VBox Slot.HAlign=\"Center\"><Spacer Height=\"4\"/><Border Material=\"Solid\" Width=\"74\" Height=\"28\" CornerRadius=\"14\" Background=\"#FFFFFF22\"/></VBox>\n"
+    "                    </Overlay>\n"
+    "                </VBox>\n"
+    "            </Overlay>\n"
+    "            <Overlay Width=\"146\" Height=\"146\" Slot.HAlign=\"Center\" Slot.VAlign=\"Center\">\n"
+    "                <Button Name=\"pad2\" Text=\"\" OnClicked=\"pad2\"/>\n"
+    "                <VBox HitTestable=\"false\" Slot.HAlign=\"Center\" Slot.VAlign=\"Top\">\n"
+    "                    <Spacer Height=\"7\"/>\n"
+    "                    <Overlay>\n"
+    "                        <Border Material=\"Solid\" Width=\"100\" Height=\"52\" CornerRadius=\"26\" Background=\"#FFFFFF10\"/>\n"
+    "                        <VBox Slot.HAlign=\"Center\"><Spacer Height=\"4\"/><Border Material=\"Solid\" Width=\"74\" Height=\"28\" CornerRadius=\"14\" Background=\"#FFFFFF22\"/></VBox>\n"
+    "                    </Overlay>\n"
+    "                </VBox>\n"
+    "            </Overlay>\n"
+    "            <Overlay Width=\"146\" Height=\"146\" Slot.HAlign=\"Center\" Slot.VAlign=\"Center\">\n"
+    "                <Button Name=\"pad3\" Text=\"\" OnClicked=\"pad3\"/>\n"
+    "                <VBox HitTestable=\"false\" Slot.HAlign=\"Center\" Slot.VAlign=\"Top\">\n"
+    "                    <Spacer Height=\"7\"/>\n"
+    "                    <Overlay>\n"
+    "                        <Border Material=\"Solid\" Width=\"100\" Height=\"52\" CornerRadius=\"26\" Background=\"#FFFFFF10\"/>\n"
+    "                        <VBox Slot.HAlign=\"Center\"><Spacer Height=\"4\"/><Border Material=\"Solid\" Width=\"74\" Height=\"28\" CornerRadius=\"14\" Background=\"#FFFFFF22\"/></VBox>\n"
+    "                    </Overlay>\n"
+    "                </VBox>\n"
+    "            </Overlay>\n"
+    "            <Overlay Width=\"146\" Height=\"146\" Slot.HAlign=\"Center\" Slot.VAlign=\"Center\">\n"
+    "                <Button Name=\"pad4\" Text=\"\" OnClicked=\"pad4\"/>\n"
+    "                <VBox HitTestable=\"false\" Slot.HAlign=\"Center\" Slot.VAlign=\"Top\">\n"
+    "                    <Spacer Height=\"7\"/>\n"
+    "                    <Overlay>\n"
+    "                        <Border Material=\"Solid\" Width=\"100\" Height=\"52\" CornerRadius=\"26\" Background=\"#FFFFFF10\"/>\n"
+    "                        <VBox Slot.HAlign=\"Center\"><Spacer Height=\"4\"/><Border Material=\"Solid\" Width=\"74\" Height=\"28\" CornerRadius=\"14\" Background=\"#FFFFFF22\"/></VBox>\n"
+    "                    </Overlay>\n"
+    "                </VBox>\n"
+    "            </Overlay>\n"
+    "            <Overlay Width=\"146\" Height=\"146\" Slot.HAlign=\"Center\" Slot.VAlign=\"Center\">\n"
+    "                <Button Name=\"pad5\" Text=\"\" OnClicked=\"pad5\"/>\n"
+    "                <VBox HitTestable=\"false\" Slot.HAlign=\"Center\" Slot.VAlign=\"Top\">\n"
+    "                    <Spacer Height=\"7\"/>\n"
+    "                    <Overlay>\n"
+    "                        <Border Material=\"Solid\" Width=\"100\" Height=\"52\" CornerRadius=\"26\" Background=\"#FFFFFF10\"/>\n"
+    "                        <VBox Slot.HAlign=\"Center\"><Spacer Height=\"4\"/><Border Material=\"Solid\" Width=\"74\" Height=\"28\" CornerRadius=\"14\" Background=\"#FFFFFF22\"/></VBox>\n"
+    "                    </Overlay>\n"
+    "                </VBox>\n"
+    "            </Overlay>\n"
+    "        </UniformGrid>\n"
+    "    </VBox>\n"
+    "</Window>\n";
+
+int main(void) {
+    if (!Rinit(R_BACKEND_VULKAN)) return 1;
+    Rwindow_create_from_xml(XML, strlen(XML));
+    while (Rwait_frame(-1.0)) { }
+    Rshutdown();
+    return 0;
+}

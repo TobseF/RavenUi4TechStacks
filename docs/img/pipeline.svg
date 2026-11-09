@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="362" viewBox="0 0 760 362" role="img" aria-labelledby="t d">
+<title id="t">Build pipeline</title><desc id="d">Raven is cross-compiled once in Docker into libraven.a and raven.dll; C, Rust and Kotlin/Native link the static library in Docker, Java jlink uses the DLL in Docker, GraalVM native-image runs on the Windows host with MSVC.</desc>
+<style>
+  text { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  .surface { fill: #fcfcfb; } .ring { fill: none; stroke: rgba(11,11,11,0.10); }
+  .ink { fill: #0b0b0b; } .ink2 { fill: #52514e; } .muted { fill: #898781; }
+  .grid { stroke: #e1e0d9; } .axis { stroke: #c3c2b7; } .gap { stroke: #fcfcfb; }
+  .s1 { fill: #2a78d6; } .s2 { fill: #eb6834; } .s3 { fill: #1baf7a; } .s4 { fill: #eda100; } .sn { fill: #c3c2b7; }
+  .l1 { stroke: #2a78d6; } .l2 { stroke: #eb6834; }
+  .box { fill: #f3f3f0; stroke: #c3c2b7; } .boxhi { fill: #eaf2fc; stroke: #2a78d6; }
+  .pill1 { fill: #dbe9fa; } .pill2 { fill: #fde4d9; }
+  .arrow { stroke: #898781; fill: none; } .arrowhead { fill: #898781; }
+  @media (prefers-color-scheme: dark) {
+    .surface { fill: #1a1a19; } .ring { stroke: rgba(255,255,255,0.10); }
+    .ink { fill: #f0efec; } .ink2 { fill: #c3c2b7; }
+    .grid { stroke: #2c2c2a; } .axis { stroke: #383835; } .gap { stroke: #1a1a19; }
+    .s1 { fill: #3987e5; } .s2 { fill: #d95926; } .s3 { fill: #199e70; } .s4 { fill: #c98500; } .sn { fill: #5e5d58; }
+    .l1 { stroke: #3987e5; } .l2 { stroke: #d95926; }
+    .box { fill: #232321; stroke: #383835; } .boxhi { fill: #172538; stroke: #3987e5; }
+    .pill1 { fill: #1d3354; } .pill2 { fill: #4a2416; }
+  }
+</style>
+<rect class="surface" x="0.5" y="0.5" width="759" height="361" rx="12"/>
+<rect class="ring" x="0.5" y="0.5" width="759" height="361" rx="12"/>
+<text class="ink" x="24" y="36" font-size="17" font-weight="600">Build pipeline</text>
+<text class="ink2" x="24" y="57" font-size="12.5">Reproducible: Raven pinned, toolchains pinned, Linux containers cross-compile to Windows</text><rect class="box" x="24" y="150" width="150" height="48" rx="8" stroke-width="1"/>
+<text class="ink" x="36" y="170" font-size="12.5" font-weight="600">Raven source</text>
+<text class="muted" x="36" y="186" font-size="11">pinned @ 32722ad</text><path class="arrow" d="M174,174 C187,174 187,174 193,174" stroke-width="1.5"/>
+<path class="arrowhead" d="M200,174 l-8,-4 v8 z"/><rect class="boxhi" x="200" y="132" width="160" height="84" rx="8" stroke-width="1"/>
+<text class="ink" x="212" y="152" font-size="12.5" font-weight="600">raven-lib</text>
+<text class="muted" x="212" y="168" font-size="11">MinGW-w64 · MinSizeRel</text><rect class="pill1" x="212" y="186" width="49.28" height="16" rx="8"/><text class="ink" x="219" y="197.5" font-size="10.5" font-weight="600">Docker</text><path class="arrow" d="M360,160 C376,160 376,112 385,112" stroke-width="1.5"/>
+<path class="arrowhead" d="M392,112 l-8,-4 v8 z"/><path class="arrow" d="M360,190 C376,190 376,254 385,254" stroke-width="1.5"/>
+<path class="arrowhead" d="M392,254 l-8,-4 v8 z"/><rect class="box" x="392" y="88" width="138" height="48" rx="8" stroke-width="1"/>
+<text class="ink" x="404" y="108" font-size="12.5" font-weight="600">libraven.a</text>
+<text class="muted" x="404" y="124" font-size="11">static · 3.6 MiB</text><rect class="box" x="392" y="230" width="138" height="48" rx="8" stroke-width="1"/>
+<text class="ink" x="404" y="250" font-size="12.5" font-weight="600">raven.dll</text>
+<text class="muted" x="404" y="266" font-size="11">shared · 1.44 MiB</text><path class="arrow" d="M530,112 C541,112 541,96 545,96" stroke-width="1.5"/>
+<path class="arrowhead" d="M552,96 l-8,-4 v8 z"/><rect class="box" x="552" y="76" width="192" height="40" rx="8" stroke-width="1"/><text class="ink" x="564" y="93" font-size="12.5" font-weight="600">C baseline</text><text class="muted" x="564" y="108" font-size="10.5">gcc · static</text><rect class="pill1" x="686.72" y="82" width="49.28" height="16" rx="8"/><text class="ink" x="693.72" y="93.5" font-size="10.5" font-weight="600">Docker</text><path class="arrow" d="M530,112 C541,112 541,144 545,144" stroke-width="1.5"/>
+<path class="arrowhead" d="M552,144 l-8,-4 v8 z"/><rect class="box" x="552" y="124" width="192" height="40" rx="8" stroke-width="1"/><text class="ink" x="564" y="141" font-size="12.5" font-weight="600">Rust</text><text class="muted" x="564" y="156" font-size="10.5">cargo · windows-gnu</text><rect class="pill1" x="686.72" y="130" width="49.28" height="16" rx="8"/><text class="ink" x="693.72" y="141.5" font-size="10.5" font-weight="600">Docker</text><path class="arrow" d="M530,112 C541,112 541,192 545,192" stroke-width="1.5"/>
+<path class="arrowhead" d="M552,192 l-8,-4 v8 z"/><rect class="box" x="552" y="172" width="192" height="40" rx="8" stroke-width="1"/><text class="ink" x="564" y="189" font-size="12.5" font-weight="600">Kotlin/Native</text><text class="muted" x="564" y="204" font-size="10.5">Gradle · mingwX64</text><rect class="pill1" x="686.72" y="178" width="49.28" height="16" rx="8"/><text class="ink" x="693.72" y="189.5" font-size="10.5" font-weight="600">Docker</text><path class="arrow" d="M530,254 C541,254 541,252 545,252" stroke-width="1.5"/>
+<path class="arrowhead" d="M552,252 l-8,-4 v8 z"/><rect class="box" x="552" y="232" width="192" height="40" rx="8" stroke-width="1"/><text class="ink" x="564" y="249" font-size="12.5" font-weight="600">Java · jlink</text><text class="muted" x="564" y="264" font-size="10.5">javac + jlink + launcher</text><rect class="pill1" x="686.72" y="238" width="49.28" height="16" rx="8"/><text class="ink" x="693.72" y="249.5" font-size="10.5" font-weight="600">Docker</text><path class="arrow" d="M530,254 C541,254 541,300 545,300" stroke-width="1.5"/>
+<path class="arrowhead" d="M552,300 l-8,-4 v8 z"/><rect class="box" x="552" y="280" width="192" height="40" rx="8" stroke-width="1"/><text class="ink" x="564" y="297" font-size="12.5" font-weight="600">Java · GraalVM</text><text class="muted" x="564" y="312" font-size="10.5">native-image + MSVC</text><rect class="pill2" x="651.44" y="286" width="84.56" height="16" rx="8"/><text class="ink" x="658.44" y="297.5" font-size="10.5" font-weight="600">Windows host</text><text class="muted" x="24" y="342" font-size="11">Every exe is then driven by smoke-test.ps1 over UI Automation: Start → sequence plays → a pad is pressed → status is checked → window closed.</text>
+</svg>

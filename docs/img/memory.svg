@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="326" viewBox="0 0 760 326" role="img" aria-labelledby="t d">
+<title id="t">Working set per variant</title><desc id="d">C baseline: 144 MiB; Rust: 144.3 MiB; Kotlin/Native: 145.8 MiB; Java · GraalVM: 155.6 MiB; Java · jlink: 194.3 MiB</desc>
+<style>
+  text { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  .surface { fill: #fcfcfb; } .ring { fill: none; stroke: rgba(11,11,11,0.10); }
+  .ink { fill: #0b0b0b; } .ink2 { fill: #52514e; } .muted { fill: #898781; }
+  .grid { stroke: #e1e0d9; } .axis { stroke: #c3c2b7; } .gap { stroke: #fcfcfb; }
+  .s1 { fill: #2a78d6; } .s2 { fill: #eb6834; } .s3 { fill: #1baf7a; } .s4 { fill: #eda100; } .sn { fill: #c3c2b7; }
+  .l1 { stroke: #2a78d6; } .l2 { stroke: #eb6834; }
+  .box { fill: #f3f3f0; stroke: #c3c2b7; } .boxhi { fill: #eaf2fc; stroke: #2a78d6; }
+  .pill1 { fill: #dbe9fa; } .pill2 { fill: #fde4d9; }
+  .arrow { stroke: #898781; fill: none; } .arrowhead { fill: #898781; }
+  @media (prefers-color-scheme: dark) {
+    .surface { fill: #1a1a19; } .ring { stroke: rgba(255,255,255,0.10); }
+    .ink { fill: #f0efec; } .ink2 { fill: #c3c2b7; }
+    .grid { stroke: #2c2c2a; } .axis { stroke: #383835; } .gap { stroke: #1a1a19; }
+    .s1 { fill: #3987e5; } .s2 { fill: #d95926; } .s3 { fill: #199e70; } .s4 { fill: #c98500; } .sn { fill: #5e5d58; }
+    .l1 { stroke: #3987e5; } .l2 { stroke: #d95926; }
+    .box { fill: #232321; stroke: #383835; } .boxhi { fill: #172538; stroke: #3987e5; }
+    .pill1 { fill: #1d3354; } .pill2 { fill: #4a2416; }
+  }
+</style>
+<rect class="surface" x="0.5" y="0.5" width="759" height="325" rx="12"/>
+<rect class="ring" x="0.5" y="0.5" width="759" height="325" rx="12"/>
+<text class="ink" x="24" y="36" font-size="17" font-weight="600">Working set after one round</text>
+<text class="ink2" x="24" y="57" font-size="12.5">Resident memory · MiB · single sample · dominated by the Vulkan driver, not the language</text><line class="axis" x1="196" x2="196" y1="80" y2="276" stroke-width="1"/><text class="muted" x="196" y="292" font-size="11" text-anchor="middle" style="font-variant-numeric:tabular-nums">0</text><line class="grid" x1="307" x2="307" y1="80" y2="276" stroke-width="1"/><text class="muted" x="307" y="292" font-size="11" text-anchor="middle" style="font-variant-numeric:tabular-nums">50</text><line class="grid" x1="418" x2="418" y1="80" y2="276" stroke-width="1"/><text class="muted" x="418" y="292" font-size="11" text-anchor="middle" style="font-variant-numeric:tabular-nums">100</text><line class="grid" x1="529" x2="529" y1="80" y2="276" stroke-width="1"/><text class="muted" x="529" y="292" font-size="11" text-anchor="middle" style="font-variant-numeric:tabular-nums">150</text><line class="grid" x1="640" x2="640" y1="80" y2="276" stroke-width="1"/><text class="muted" x="640" y="292" font-size="11" text-anchor="middle" style="font-variant-numeric:tabular-nums">200</text><text class="ink" x="24" y="99" font-size="13" font-weight="600">C baseline</text>
+<text class="muted" x="24" y="114" font-size="11">reference, no game logic</text><path class="s1" d="M196,90h315.68a4,4 0 0 1 4,4v10a4,4 0 0 1 -4,4h-315.68z"><title>C baseline: 144 MiB working set, 158.2 MiB private</title></path><text class="ink" x="523.6800000000001" y="103" font-size="12.5" font-weight="600" style="font-variant-numeric:tabular-nums">144 MiB</text><text class="ink" x="24" y="139" font-size="13" font-weight="600">Rust</text>
+<text class="muted" x="24" y="154" font-size="11">1 exe, Raven static</text><path class="s1" d="M196,130h316.346a4,4 0 0 1 4,4v10a4,4 0 0 1 -4,4h-316.346z"><title>Rust: 144.3 MiB working set, 158.4 MiB private</title></path><text class="ink" x="524.346" y="143" font-size="12.5" font-weight="600" style="font-variant-numeric:tabular-nums">144 MiB</text><text class="ink" x="24" y="179" font-size="13" font-weight="600">Kotlin/Native</text>
+<text class="muted" x="24" y="194" font-size="11">1 exe, Raven static</text><path class="s1" d="M196,170h319.67600000000004a4,4 0 0 1 4,4v10a4,4 0 0 1 -4,4h-319.67600000000004z"><title>Kotlin/Native: 145.8 MiB working set, 160.8 MiB private</title></path><text class="ink" x="527.676" y="183" font-size="12.5" font-weight="600" style="font-variant-numeric:tabular-nums">146 MiB</text><text class="ink" x="24" y="219" font-size="13" font-weight="600">Java · GraalVM</text>
+<text class="muted" x="24" y="234" font-size="11">exe + raven.dll</text><path class="s1" d="M196,210h341.432a4,4 0 0 1 4,4v10a4,4 0 0 1 -4,4h-341.432z"><title>Java · GraalVM: 155.6 MiB working set, 179.1 MiB private</title></path><text class="ink" x="549.432" y="223" font-size="12.5" font-weight="600" style="font-variant-numeric:tabular-nums">156 MiB</text><text class="ink" x="24" y="259" font-size="13" font-weight="600">Java · jlink</text>
+<text class="muted" x="24" y="274" font-size="11">launcher + runtime + dll</text><path class="s1" d="M196,250h427.346a4,4 0 0 1 4,4v10a4,4 0 0 1 -4,4h-427.346z"><title>Java · jlink: 194.3 MiB working set, 1208 MiB private</title></path><text class="ink" x="635.346" y="263" font-size="12.5" font-weight="600" style="font-variant-numeric:tabular-nums">194 MiB</text><text class="muted" x="24" y="310" font-size="11">Java · jlink commits 1,208 MiB of private bytes: the JVM's default heap reservation (1/64 of RAM), not memory in use. Tunable with -Xmx/-Xms.</text>
+</svg>

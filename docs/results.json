@@ -1,0 +1,131 @@
+{
+  "_note": "Measured 2026-11-08 (glass look) on Windows 11 Pro (26100), NVIDIA GPU, Vulkan. Sizes in bytes. Startup = process start until the window is visible over UI Automation. Memory = after one round, single sample.",
+  "variants": [
+    {
+      "id": "c",
+      "name": "C baseline",
+      "sub": "reference, no game logic",
+      "files": 1,
+      "bytes": 1439232,
+      "raven": 1439232,
+      "ravenLabel": "Raven + C runtime (static)",
+      "startup": [
+        562,
+        526,
+        575
+      ],
+      "workingSet": 144.0,
+      "private": 158.2
+    },
+    {
+      "id": "rust",
+      "name": "Rust",
+      "sub": "1 exe, Raven static",
+      "files": 1,
+      "bytes": 1673728,
+      "raven": 1439232,
+      "ravenLabel": "Raven + C runtime (static)",
+      "startup": [
+        522,
+        519,
+        562
+      ],
+      "workingSet": 144.3,
+      "private": 158.4
+    },
+    {
+      "id": "kotlin",
+      "name": "Kotlin/Native",
+      "sub": "1 exe, Raven static",
+      "files": 1,
+      "bytes": 2136064,
+      "raven": 1439232,
+      "ravenLabel": "Raven + C runtime (static)",
+      "startup": [
+        522,
+        549,
+        558
+      ],
+      "workingSet": 145.8,
+      "private": 160.8
+    },
+    {
+      "id": "graal",
+      "name": "Java · GraalVM",
+      "sub": "exe + raven.dll",
+      "files": 2,
+      "bytes": 18386432,
+      "raven": 1515008,
+      "ravenLabel": "raven.dll",
+      "startup": [
+        612,
+        538,
+        586
+      ],
+      "workingSet": 155.6,
+      "private": 179.1
+    },
+    {
+      "id": "java",
+      "name": "Java · jlink",
+      "sub": "launcher + runtime + dll",
+      "files": 41,
+      "bytes": 29898560,
+      "raven": 1515008,
+      "ravenLabel": "raven.dll",
+      "startup": [
+        668,
+        702,
+        688
+      ],
+      "workingSet": 194.3,
+      "private": 1208.0
+    }
+  ],
+  "breakdown": {
+    "graal": [
+      {
+        "role": "raven",
+        "label": "raven.dll",
+        "bytes": 1515008
+      },
+      {
+        "role": "vm",
+        "label": "Native Image floor (empty Hello World)",
+        "bytes": 11411456
+      },
+      {
+        "role": "app",
+        "label": "game + binding + FFM stubs",
+        "bytes": 5459968
+      }
+    ],
+    "java": [
+      {
+        "role": "raven",
+        "label": "raven.dll",
+        "bytes": 1515008
+      },
+      {
+        "role": "vm",
+        "label": "jvm.dll (HotSpot)",
+        "bytes": 15423656
+      },
+      {
+        "role": "lib",
+        "label": "lib/modules (java.base)",
+        "bytes": 11649531
+      },
+      {
+        "role": "other",
+        "label": "other runtime files",
+        "bytes": 1112784
+      },
+      {
+        "role": "app",
+        "label": "simon.jar + launcher",
+        "bytes": 197581
+      }
+    ]
+  }
+}

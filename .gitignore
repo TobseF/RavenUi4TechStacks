@@ -1,0 +1,27 @@
+# Build outputs
+dist/
+build/
+target/
+.gradle/
+*.class
+*.o
+*.obj
+*.exe
+*.dll
+*.jar
+
+# Downloaded toolchains (see java-graal/get-graalvm.ps1)
+.tools/
+
+# Kotlin/Native
+*.kexe
+*.klib
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
